@@ -2,7 +2,7 @@
 
 ## About
 Simple Food Shopping Cart application using .NET 7. For database using SQL Server 2022 .<br/>
-![](./Buffet.png)
+![](./Buffet.jpg)
 
 ## Overview
 This simple food shopping cart application using .NET 7, scaffolding, entity framework core, bootstrap 5, and SQL Server for the database.
