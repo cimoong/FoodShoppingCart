@@ -1,0 +1,81 @@
+﻿
+@model FoodDisplayModel
+@{
+}
+
+<div class="my-2">
+    <form class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-12">
+            <label class="visually-hidden" for="countryId">Country</label>
+            <select class="form-select" id="countryId" name="countryId">
+                <option selected>Country</option>
+                @foreach (var country in Model.Countries)
+                {
+                    <option selected="@(country.Id == Model.CountryId)" value="@country.Id">@country.CountryName</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-12">
+            <label class="visually-hidden" for="searchTerm">Search by Name</label>
+            <div class="input-group">
+                <div class="input-group-text"></div>
+                <input type="text" class="form-control" id="searchTerm" name="searchTerm" placeholder="Search by Name">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="/Home/Index" class="btn btn-dark">Reset</a>
+        </div>
+    </form>
+</div>
+
+<div class="w-100 mt-4 d-flex flex-wrap">
+    @foreach (var food in Model.Foods)
+    {
+        <div class="card mx-2 mb-4" style="width: 12rem;">
+            @if (string.IsNullOrEmpty(food.Image))
+            {
+                <img style="width:100%;height:180px" src="/images/NoImage.png" class="card-img-top" alt="...">
+
+            }
+            else
+            {
+                <img style="width:100%;height:180px" src="/images/@food.Image" class="card-img-top" alt="...">
+            }
+            <div class="card-body">
+                <h5 class="card-title">@food.FoodName</h5>
+                <p class="card-text">
+                    <b>Country: </b>@food.CountryName <br />
+                    <b>Description: </b>@food.FoodDescription <br />
+                    <b>Price: </b>@food.FoodPrice
+                </p>
+                <button type="button" onclick="add(@food.Id)" class="btn btn-primary">Add to cart</button>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts{
+    <script>
+        async function add(foodId) {
+            var usernameEl = document.getElementById("username");
+            if (usernameEl == null) {
+                window.location.href = "/Identity/Account/Login";
+            }
+            try {
+                var response = await fetch(`/ShoppingCart/AddItem?foodId=${foodId}`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartCountEl = document.getElementById("cartCount");
+                    cartCountEl.innerHTML = result;
+                    window.location.href = "#cartCount";
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+}

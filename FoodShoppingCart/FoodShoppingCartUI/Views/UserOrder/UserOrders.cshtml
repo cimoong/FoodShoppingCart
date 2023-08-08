@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Order>
+
+
+@{
+}
+<div style="width:100%" class="mt-2">
+    <a href="/Home/Index" class="btn btn-primary my-2">Back</a>
+
+    <h4>My Orders</h4>
+    @if (Model != null && Model.Count() > 0)
+    {
+        <table class="table table-striped">
+            <tr>
+                <th>OrderDate</th>
+                <th>OrderStatus</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.CreatedDate.ToString("dd-MM-yyyy")</td>
+                    <td>@order.OrderStatus.StatusName</td>
+                    @if (@order.OrderStatus.Id == 1)
+                    {
+                        <td><a class="btn btn-primary" href="/UserOrder/DoShipping?Id=@order.Id">Ship</a></td>
+                    }
+                    else
+                    {
+                        <td><a class="btn btn-primary disabled" href="#" disabled>Ship</a></td>
+                    }
+                    
+                </tr>
+                @if (order.OrderDetails != null && order.OrderDetails.Count > 0)
+                {
+                    <tr>
+                        <td>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>
+                                        Total:
+                                    </td>
+                                    <td>
+                                        @(order.OrderDetails.Select(item => item.Food.FoodPrice * item.Quantity).Sum())
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Food</th>
+                                    <th>Image</th>
+                                    <th>Unit Price(IDR)</th>
+                                    <th>Total Price</th>
+                                </tr>
+                                @foreach (var item in order.OrderDetails)
+                                {
+                                    <tr>
+                                        <td>@item.Food.FoodName</td>
+                                        <td>
+                                            @if (string.IsNullOrEmpty(item.Food.Image))
+                                            {
+                                                <img src="/images/NoImage.png" style="width:80px;height:100px" />
+                                            }
+                                            else
+                                            {
+                                                <img src="/images/@item.Food.Image" style="width:80px;height:100px" />
+                                            }
+                                        </td>
+                                        <td>@item.Food.FoodPrice X @item.Quantity</td>
+                                        <td> @(item.Food.FoodPrice * item.Quantity) </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+
+    }
+    else
+    {
+        <h5>No orders</h5>
+    }
+</div>

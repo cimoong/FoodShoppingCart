@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\FoodShoppingCartUI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\FoodShoppingCartUI.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\wwwroot\\images\\NoImage.png",
+      "PackagePath": "staticwebassets\\images\\NoImage.png"
+    },
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\wwwroot\\images\\fuyunghai.jpg",
+      "PackagePath": "staticwebassets\\images\\fuyunghai.jpg"
+    },
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\wwwroot\\images\\mie_goreng_jawa.jpg",
+      "PackagePath": "staticwebassets\\images\\mie_goreng_jawa.jpg"
+    },
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\wwwroot\\images\\pecel_lele.jpg",
+      "PackagePath": "staticwebassets\\images\\pecel_lele.jpg"
+    },
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\wwwroot\\images\\pizza.jpg",
+      "PackagePath": "staticwebassets\\images\\pizza.jpg"
+    },
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\wwwroot\\images\\soto_betawi.jpg",
+      "PackagePath": "staticwebassets\\images\\soto_betawi.jpg"
+    },
+    {
+      "Id": "C:\\DATA\\Kerja\\Inspiro\\source code\\FoodShoppingCart\\FoodShoppingCartUI\\wwwroot\\images\\soto_lamongan.jpg",
+      "PackagePath": "staticwebassets\\images\\soto_lamongan.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.FoodShoppingCartUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.FoodShoppingCartUI.props",
+      "PackagePath": "build\\FoodShoppingCartUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.FoodShoppingCartUI.props",
+      "PackagePath": "buildMultiTargeting\\FoodShoppingCartUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.FoodShoppingCartUI.props",
+      "PackagePath": "buildTransitive\\FoodShoppingCartUI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
